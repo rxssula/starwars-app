@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    width: 100vh;
+    height: 100vh;
+    background: url('/starwars-bg.jpg');
+    background-size: cover;
+}
