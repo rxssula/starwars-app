@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="flex">
       <Navbar />
-      <div className="max-w-5xl my-5 text-white mx-auto transition-all duration-300 flex-1">
+      <div className="max-w-7xl my-5 text-white mx-auto transition-all duration-300 flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/species" element={<Species />} />
