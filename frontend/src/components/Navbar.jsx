@@ -14,6 +14,12 @@ const Navbar = () => {
           to="/"
           className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
         >
+          <img className="h-8" src="/planets.png" alt="Planets logo" />
+        </Link>
+        <Link
+          to="/"
+          className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
+        >
           <img className="h-8" src="/human.png" alt="People logo" />
         </Link>
         <Link
