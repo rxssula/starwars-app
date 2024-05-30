@@ -17,19 +17,19 @@ const Navbar = () => {
           <img className="h-8" src="/planets.png" alt="Planets logo" />
         </Link>
         <Link
-          to="/"
+          to="/people"
           className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
         >
           <img className="h-8" src="/human.png" alt="People logo" />
         </Link>
         <Link
-          to="/"
+          to="/species"
           className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
         >
           <img className="h-8" src="/species.png" alt="Species logo" />
         </Link>
         <Link
-          to="/"
+          to="/starships"
           className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
         >
           <img className="h-8" src="/starships.png" alt="Starships logo" />

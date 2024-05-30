@@ -2,10 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const axios = require("axios");
-// const DataService = require("./network/DataService");
-// const planetsRoutes = require("./routes/planets.route");
+
 const connectMongoDB = require("./db/connectMongoDB");
+const Person = require("./models/person.model");
 const Planet = require("./models/planet.model");
+const Species = require("./models/species.model");
+const Starship = require("./models/starship.model");
 
 const app = express();
 
@@ -16,16 +18,15 @@ app.use(express.json());
 
 app.get("/fetch-and-store", async (req, res) => {
   try {
-    const response = await axios.get("https://swapi.dev/api/planets/?page=5");
+    const response = await axios.get("https://swapi.dev/api/starships/?page=4");
     const apiData = response.data.results;
 
     const savedData = await Promise.all(
       apiData.map(async (item) => {
-        const newData = new Planet({
+        const newData = new Starship({
           name: item.name,
-          gravity: item.gravity,
-          climate: item.climate,
-          population: item.population,
+          consumables: item.consumables,
+          passengers: item.passengers,
         });
         return await newData.save();
       })
@@ -39,6 +40,33 @@ app.get("/fetch-and-store", async (req, res) => {
 app.get("/api/planets", async (req, res) => {
   try {
     const data = await Planet.find();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get("/api/people", async (req, res) => {
+  try {
+    const data = await Person.find();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get("/api/species", async (req, res) => {
+  try {
+    const data = await Species.find();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get("/api/starships", async (req, res) => {
+  try {
+    const data = await Starship.find();
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: error.message });
