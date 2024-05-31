@@ -73,6 +73,16 @@ app.get("/api/starships", async (req, res) => {
   }
 });
 
+app.get("/api/search", async (req, res) => {
+  const { query } = req.query;
+  try {
+    const results = await Planet.find({ $text: { $search: query } });
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
 app.listen(8000, () => {
   console.log("Sever started on port 8000");
   connectMongoDB();

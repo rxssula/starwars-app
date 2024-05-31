@@ -7,6 +7,13 @@ const planetSchema = new mongoose.Schema({
   population: String,
 });
 
+planetSchema.index({
+  name: "text",
+  gravity: "text",
+  climate: "text",
+  population: "text",
+});
+
 const Planet = mongoose.model("Planet", planetSchema);
 
 module.exports = Planet;

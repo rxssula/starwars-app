@@ -6,6 +6,8 @@ const personSchema = new mongoose.Schema({
   birthYear: String,
 });
 
+personSchema.index({ name: "text", gender: "text", birthYear: "text" });
+
 const Person = mongoose.model("Person", personSchema);
 
 module.exports = Person;

@@ -6,6 +6,8 @@ const starshipSchema = new mongoose.Schema({
   passengers: String,
 });
 
+starshipSchema.index({ name: "text", consumables: "text", passengers: "text" });
+
 const Starship = mongoose.model("Starship", starshipSchema);
 
 module.exports = Starship;

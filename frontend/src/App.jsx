@@ -6,6 +6,7 @@ import Starships from "./pages/Starships";
 import People from "./pages/People";
 
 import Navbar from "./components/Navbar";
+import Results from "./pages/Results";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/species" element={<Species />} />
           <Route path="/people" element={<People />} />
           <Route path="/starships" element={<Starships />} />
+          <Route path="/results" element={<Results />} />
         </Routes>
       </div>
     </div>

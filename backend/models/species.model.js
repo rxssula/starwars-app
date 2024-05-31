@@ -7,6 +7,13 @@ const speciesSchema = new mongoose.Schema({
   language: String,
 });
 
+speciesSchema.index({
+  name: "text",
+  classification: "text",
+  averageLifespan: "text",
+  language: "text",
+});
+
 const Species = mongoose.model("Species", speciesSchema);
 
 module.exports = Species;

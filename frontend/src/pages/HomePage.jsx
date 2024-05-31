@@ -23,6 +23,7 @@ const HomePage = () => {
       <div className="h-full flex md:items-stretch flex-wrap gap-4 flex-col items-center md:flex-row md:justify-center">
         {data.map((item) => (
           <Card
+            key={item._id}
             name={item.name}
             population={item.population}
             climate={item.climate}

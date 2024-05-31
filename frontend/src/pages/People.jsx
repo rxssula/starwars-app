@@ -23,6 +23,7 @@ const People = () => {
       <div className="h-full flex md:items-stretch flex-wrap gap-4 flex-col items-center md:flex-row md:justify-center">
         {data.map((item) => (
           <PeopleCard
+            key={item._id}
             name={item.name}
             gender={item.gender}
             birthYear={item.birthYear}
