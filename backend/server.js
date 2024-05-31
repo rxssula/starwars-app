@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const axios = require("axios");
+const path = require("path");
 
 const connectMongoDB = require("./db/connectMongoDB");
 const Person = require("./models/person.model");
@@ -10,6 +11,7 @@ const Species = require("./models/species.model");
 const Starship = require("./models/starship.model");
 
 const app = express();
+const PORT = process.env.PORT || 8000;
 
 dotenv.config();
 
@@ -83,7 +85,7 @@ app.get("/api/search", async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log("Sever started on port 8000");
+app.listen(PORT, () => {
+  console.log(`Sever started on port ${PORT}`);
   connectMongoDB();
 });
